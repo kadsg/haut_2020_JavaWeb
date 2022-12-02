@@ -9,9 +9,8 @@ import util.RandomUtil;
 import java.io.IOException;
 
 public class AdministratorService {
-    private SqlSession sqlSession;
     public void addItem(Item item) throws IOException {
-        sqlSession = DBUtil.getSqlSession();
+        SqlSession sqlSession = DBUtil.getSqlSession();
         ItemMapper mapper = sqlSession.getMapper(ItemMapper.class);
 
         item.setId(RandomUtil.getRandom());

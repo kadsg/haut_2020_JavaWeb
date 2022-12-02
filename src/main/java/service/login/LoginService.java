@@ -11,33 +11,32 @@ import util.DBUtil;
 import java.io.IOException;
 
 public class LoginService {
-    private final SqlSession sqlSession = DBUtil.getSqlSession();
-
-    public LoginService() throws IOException {
-    }
-
-    public User getAdministrator(String account) {
+    public User getAdministrator(String account) throws IOException {
+        SqlSession sqlSession = DBUtil.getSqlSession();
         AdministratorMapper mapper = sqlSession.getMapper(AdministratorMapper.class);
         User user = mapper.select(account);
         sqlSession.commit();
         sqlSession.close();
         return user;
     }
-    public User getReferee(String account) {
+    public User getReferee(String account) throws IOException {
+        SqlSession sqlSession = DBUtil.getSqlSession();
         RefereeMapper mapper = sqlSession.getMapper(RefereeMapper.class);
         User user = mapper.select(account);
         sqlSession.commit();
         sqlSession.close();
         return user;
     }
-    public User getPlayer(String account) {
+    public User getPlayer(String account) throws IOException {
+        SqlSession sqlSession = DBUtil.getSqlSession();
         PlayerMapper mapper = sqlSession.getMapper(PlayerMapper.class);
         User user = mapper.select(account);
         sqlSession.commit();
         sqlSession.close();
         return user;
     }
-    public User getVolunteer(String account) {
+    public User getVolunteer(String account) throws IOException {
+        SqlSession sqlSession = DBUtil.getSqlSession();
         VolunteerMapper mapper = sqlSession.getMapper(VolunteerMapper.class);
         User user = mapper.select(account);
         sqlSession.commit();
