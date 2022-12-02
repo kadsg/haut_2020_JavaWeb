@@ -29,7 +29,6 @@
             <th>动作</th>
         </tr>
         <%
-            String message = null;
             if (itemList != null) {
                 for (Item item : itemList) {
         %>
@@ -43,26 +42,27 @@
             </td>
             <td><%=item.getPlace()%>
             </td>
+
             <%
+                boolean isSignUp = false;
+                // 报名表非空
                 if (signUpList != null)
-                    for (EventPlayer signUpItem : signUpList) {
-                        if (signUpItem.getId_item().equals(item.getId())) {
+                    for (EventPlayer eventPlayer : signUpList)
+                        if (eventPlayer.getId_item().equals(item.getId()))
+                            isSignUp = true;
+
+                if (isSignUp) {
             %>
             <td>已报名</td>
             <%
-            } else {
+                } else {
             %>
-            <td><a href="${pageContext.request.contextPath}/SignUpServlet?id="<%=item.getId()%>>点击报名</a></td>
-            <% }
-            }
-            else
-            %>
-            <td><a href="${pageContext.request.contextPath}/SignUpServlet?id="<%=item.getId()%>>点击报名</a></td>
+            <td><a href="/SignUpServlet?id=<%=item.getId()%>">点击报名</a></td>
             <%
-                    }
                 }
+                }
+            }
             %>
-        </tr>
     </table>
 </div>
 </body>
