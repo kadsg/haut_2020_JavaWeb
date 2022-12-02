@@ -1,24 +1,24 @@
 package bean;
 
 public class EventPlayer {
-    private String id_sport;
+    private String id_player;
     private String id_item;
     private double grade;
     private boolean join;
 
-    public EventPlayer(String id_sport, String id_item, double grade, boolean join) {
-        this.id_sport = id_sport;
+    public EventPlayer(String id_player, String id_item, double grade, boolean join) {
+        this.id_player = id_player;
         this.id_item = id_item;
         this.grade = grade;
         this.join = join;
     }
 
     public String getId_sport() {
-        return id_sport;
+        return id_player;
     }
 
-    public void setId_sport(String id_sport) {
-        this.id_sport = id_sport;
+    public void setId_sport(String id_player) {
+        this.id_player = id_player;
     }
 
     public String getId_item() {
