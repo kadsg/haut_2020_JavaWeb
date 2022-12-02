@@ -4,9 +4,13 @@ import bean.item.Item;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 public interface ItemMapper {
     @Insert("insert into item values (#{id},#{name},#{rule},#{place},#{time},#{is_over})")
     void insert(Item item);
     @Select("select * from item where id=#{0}")
-    void search(String id);
+    Item search(String id);
+    @Select("select * from item")
+    List<Item> queryAllItem();
 }
