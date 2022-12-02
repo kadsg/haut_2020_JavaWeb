@@ -18,11 +18,11 @@ public class AddItemServlet extends HttpServlet {
         String temp_time = request.getParameter("time");
         String rule = request.getParameter("rule");
         String place = request.getParameter("place");
-        String time = temp_time.substring(0, 10) + "" + temp_time.substring(10 + 1);
+        String time = temp_time.substring(0, 10) + " " + temp_time.substring(10 + 1);
 
         Item item = new Item(name, rule, place, time);
         service.addItem(item);
-        // TODO 假定添加成功，跳转
+        // TODO 假定添加成功，跳转到查看页面
     }
 
     @Override
