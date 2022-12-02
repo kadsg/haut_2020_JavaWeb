@@ -1,4 +1,5 @@
-<%@ page import="bean.user.User" %><%--
+<%@ page import="bean.user.User" %>
+<%@ page import="bean.user.Administrator" %><%--
   Created by IntelliJ IDEA.
   User: kadsg
   Date: 2022/12/2
@@ -6,9 +7,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-  User user = (User) session.getAttribute("user");
-%>
 <html>
 <head>
     <title>管理员界面</title>
