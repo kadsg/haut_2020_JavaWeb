@@ -1,6 +1,7 @@
-package controller.user.player;
+package controller.user.player.signup;
 
 import bean.EventPlayer;
+import bean.user.User;
 import service.EventPlayerService;
 
 import javax.servlet.*;
@@ -8,18 +9,18 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "EntryServlet", value = "/EntryServlet")
-public class EntryServlet extends HttpServlet {
+@WebServlet(name = "PlayerSignUpServlet", value = "/PlayerSignUpServlet")
+public class PlayerSignUpServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EventPlayerService service = new EventPlayerService();
-        String id_player = request.getParameter("id_player");
-        String id_item = request.getParameter("id_item");
-        EventPlayer eventPlayer = service.getEventPlayer(id_player, id_item);
+        String id = request.getParameter("id");
+        User user = (User) request.getSession().getAttribute("user");
+        EventPlayer eventPlayer = new EventPlayer(user.getAccount(), id, 0, false);
 
-        service.updateJoin(eventPlayer);
+        service.insert(eventPlayer);
 
-        request.getRequestDispatcher("/EntryViewServlet").forward(request, response);
+        request.getRequestDispatcher("/PlayerSignUpViewServlet").forward(request, response);
     }
 
     @Override

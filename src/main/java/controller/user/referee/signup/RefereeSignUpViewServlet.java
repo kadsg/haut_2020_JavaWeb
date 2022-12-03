@@ -1,4 +1,4 @@
-package controller.user.referee;
+package controller.user.referee.signup;
 
 import bean.EventPlayer;
 import bean.EventReferee;

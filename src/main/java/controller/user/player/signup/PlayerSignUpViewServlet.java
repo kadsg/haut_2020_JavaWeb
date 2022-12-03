@@ -1,4 +1,4 @@
-package controller.user.player;
+package controller.user.player.signup;
 
 import bean.EventPlayer;
 import bean.item.Item;
