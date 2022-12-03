@@ -13,7 +13,7 @@
 <body>
     <div id="guide">
         <a href="addItem.jsp">发布运动会项目</a>
-        <a href="">赛事查看</a>
+        <a href="${pageContext.request.contextPath}/QueryItemServlet?identity=administrator">赛事查看</a>
         <a href="">查看报名情况</a>
         <a href="">运动项目成绩公布</a>
     </div>

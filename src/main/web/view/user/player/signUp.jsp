@@ -17,6 +17,7 @@
     <title>赛事报名</title>
 </head>
 <body>
+<jsp:include page="guide.jsp"/>
 <div id="table">
     <p>赛事报名</p>
     <table>
@@ -57,7 +58,7 @@
             <%
                 } else {
             %>
-            <td><a href="/SignUpServlet?id=<%=item.getId()%>">点击报名</a></td>
+            <td><a href="/PlayerSignUpServlet?id=<%=item.getId()%>">点击报名</a></td>
             <%
                 }
                 }

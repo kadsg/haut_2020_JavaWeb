@@ -13,8 +13,8 @@
 <body>
     <div id="guide">
         <a href="${pageContext.request.contextPath}/QueryItemServlet?identity=player">赛事查看</a>
-        <a href="${pageContext.request.contextPath}/SignUpViewServlet">赛事报名</a>
-        <a href="">参加赛事</a>
+        <a href="${pageContext.request.contextPath}/PlayerSignUpViewServlet">赛事报名</a>
+        <a href="${pageContext.request.contextPath}/EntryViewServlet">参加赛事</a>
         <a href="">查看成绩</a>
     </div>
 </body>
