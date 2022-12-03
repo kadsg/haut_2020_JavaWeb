@@ -5,10 +5,12 @@ import bean.item.Item;
 import bean.user.Player;
 import bean.user.User;
 import mapper.EventPlayerMapper;
+import mapper.user.PlayerMapper;
 import org.apache.ibatis.session.SqlSession;
 import util.DBUtil;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class EventPlayerService {
@@ -32,6 +34,33 @@ public class EventPlayerService {
         sqlSession.commit();
         sqlSession.close();
         return itemList;
+    }
+
+    /**
+     * 获取报名项目的运动员列表
+     */
+    public List<Player> queryAllPlayerOfItem(Item item) throws IOException {
+        sqlSession = DBUtil.getSqlSession();
+        EventPlayerMapper eventPlayerMapper = sqlSession.getMapper(EventPlayerMapper.class);
+        List<EventPlayer> eventPlayerList = eventPlayerMapper.queryAllByIdItem(item.getId());
+
+        sqlSession.commit();
+        sqlSession.close();
+
+        sqlSession = DBUtil.getSqlSession();
+        PlayerMapper playerMapper = sqlSession.getMapper(PlayerMapper.class);
+        List<Player> playerList = null;
+
+        if(eventPlayerList != null) {
+            if (playerList == null)
+                playerList = new ArrayList<>();
+            for (EventPlayer eventPlayer : eventPlayerList) {
+                Player player = playerMapper.select(eventPlayer.getId_sport());
+                playerList.add(player);
+            }
+        }
+
+        return playerList;
     }
 
     /**

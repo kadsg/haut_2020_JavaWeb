@@ -22,6 +22,15 @@ public class ItemService {
         return itemList;
     }
 
+    public Item queryItemById(String id_item) throws IOException {
+        sqlSession = DBUtil.getSqlSession();
+        ItemMapper mapper = sqlSession.getMapper(ItemMapper.class);
+        Item item = mapper.search(id_item);
+        sqlSession.commit();
+        sqlSession.close();
+        return item;
+    }
+
     /**
      * 根据运动员参赛表返回对应的所有赛事
      * @param eventPlayerList
