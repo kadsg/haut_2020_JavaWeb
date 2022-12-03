@@ -39,4 +39,12 @@ public class MarkingService {
         sqlSession.close();
         return marking;
     }
+
+    public void update(Marking marking) throws IOException {
+        sqlSession = DBUtil.getSqlSession();
+        MarkingMapper mapper = sqlSession.getMapper(MarkingMapper.class);
+        mapper.update(marking);
+        sqlSession.commit();
+        sqlSession.close();
+    }
 }
