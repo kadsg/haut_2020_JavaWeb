@@ -5,13 +5,13 @@ package bean;
  */
 public class Marking {
     private String id_referee;
-    private String id_event;
+    private String id_item;
     private String id_player;
     private double grade;
 
-    public Marking(String id_referee, String id_event, String id_player, double grade) {
+    public Marking(String id_referee, String id_item, String id_player, double grade) {
         this.id_referee = id_referee;
-        this.id_event = id_event;
+        this.id_item = id_item;
         this.id_player = id_player;
         this.grade = grade;
     }
@@ -25,11 +25,11 @@ public class Marking {
     }
 
     public String getId_event() {
-        return id_event;
+        return id_item;
     }
 
-    public void setId_event(String id_event) {
-        this.id_event = id_event;
+    public void setId_event(String id_item) {
+        this.id_item = id_item;
     }
 
     public String getId_player() {
