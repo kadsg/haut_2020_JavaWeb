@@ -20,7 +20,7 @@ public class PlayerSignUpServlet extends HttpServlet {
 
         service.insert(eventPlayer);
 
-        request.getRequestDispatcher("/SignUpViewServlet").forward(request, response);
+        request.getRequestDispatcher("/PlayerSignUpViewServlet").forward(request, response);
     }
 
     @Override
