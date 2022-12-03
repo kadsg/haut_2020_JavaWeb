@@ -24,18 +24,22 @@ public class RegisterServlet extends HttpServlet {
             case "administrator":
                 user = new Administrator(account, password, name);
                 service.registerAdministrator(user);
+                request.getSession().setAttribute("user", user);
                 break;
             case "referee":
                 user = new Referee(account, password, name);
                 service.registerReferee(user);
+                request.getSession().setAttribute("user", user);
                 break;
             case "player":
                 user = new Player(account, password, name);
                 service.registerPlayer(user);
+                request.getSession().setAttribute("user", user);
                 break;
             case "volunteer":
                 user = new Volunteer(account, password, name);
                 service.registerVolunteer(user);
+                request.getSession().setAttribute("user", user);
                 break;
         }
 

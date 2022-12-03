@@ -13,10 +13,16 @@ public interface EventPlayerMapper {
     void insert(EventPlayer eventPlayer);
 
     /**
-     * 获得运动员的参赛信息
+     * 获得运动员的报名信息
      */
     @Select("select * from event_player where id_player=#{id_player}")
     List<EventPlayer> queryAllByIdPlayer(String id_player);
+
+    /**
+     * 获得项目的报名信息
+     */
+    @Select("select * from event_player where id_item=#{id_item}")
+    List<EventPlayer> queryAllByIdItem(String id_item);
 
     @Select("select * from event_player where id_player=#{id_player} and id_item=#{id_item}")
     EventPlayer queryByIdPlayerAndIdItem(
