@@ -15,7 +15,7 @@
 %>
 <html>
 <head>
-    <title></title>
+    <title>赛事裁判组</title>
 </head>
 <body>
 <jsp:include page="guide.jsp"/>
