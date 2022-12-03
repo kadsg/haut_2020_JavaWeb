@@ -33,4 +33,28 @@ public class EventPlayerService {
         sqlSession.close();
         return itemList;
     }
+
+    /**
+     * 更新参赛/成绩记录
+     */
+    public void updateJoin(EventPlayer eventPlayer) throws IOException {
+        sqlSession = DBUtil.getSqlSession();
+        EventPlayerMapper mapper = sqlSession.getMapper(EventPlayerMapper.class);
+        eventPlayer.setJoin(true);
+        mapper.update(eventPlayer);
+        sqlSession.commit();
+        sqlSession.close();
+    }
+
+    /**
+     * 获取报名记录
+     */
+    public EventPlayer getEventPlayer(String id_player, String id_item) throws IOException {
+        sqlSession = DBUtil.getSqlSession();
+        EventPlayerMapper mapper = sqlSession.getMapper(EventPlayerMapper.class);
+        EventPlayer eventPlayer = mapper.queryByIdPlayerAndIdItem(id_player, id_item);
+        sqlSession.commit();
+        sqlSession.close();
+        return eventPlayer;
+    }
 }
