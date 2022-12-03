@@ -1,8 +1,7 @@
-package controller.player;
+package controller.user.player;
 
 import bean.EventPlayer;
 import bean.item.Item;
-import bean.user.Player;
 import bean.user.User;
 import service.EventPlayerService;
 import service.ItemService;
@@ -17,8 +16,8 @@ import java.util.List;
 /**
  * 转发报名表
  */
-@WebServlet(name = "SignUpViewServlet", value = "/SignUpViewServlet")
-public class SignUpViewServlet extends HttpServlet {
+@WebServlet(name = "PlayerSignUpViewServlet", value = "/PlayerSignUpViewServlet")
+public class PlayerSignUpViewServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 获取可参赛表
