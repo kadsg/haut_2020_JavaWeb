@@ -1,4 +1,4 @@
-package controller.administrator;
+package controller.user.administrator;
 
 import bean.item.Item;
 import service.user.AdministratorService;
