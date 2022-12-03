@@ -1,5 +1,6 @@
 package mapper.user;
 
+import bean.user.Player;
 import bean.user.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
@@ -9,5 +10,5 @@ public interface PlayerMapper {
     void insert(User user);
 
     @Select("select * from player where account=#{0}")
-    User select(String account);
+    Player select(String account);
 }
