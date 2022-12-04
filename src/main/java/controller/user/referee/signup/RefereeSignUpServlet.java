@@ -35,7 +35,7 @@ public class RefereeSignUpServlet extends HttpServlet {
         List<Player> playerList = eventPlayerService.queryAllPlayerOfItem(item);
         // 分配
         MarkingService markingService = new MarkingService();
-        markingService.insert(user.getAccount(), id, playerList);
+        markingService.insertToplayerList(user.getAccount(), id, playerList);
 
         // 跳转
         request.getRequestDispatcher("/RefereeSignUpViewServlet").forward(request, response);

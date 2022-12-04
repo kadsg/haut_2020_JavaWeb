@@ -47,7 +47,7 @@ public class PlayerSignUpViewServlet extends HttpServlet {
         request.setAttribute("itemList", itemList);
         request.setAttribute("signUpList", signUpList);
 
-        request.getRequestDispatcher("/view/user/player/signUp.jsp").forward(request, response);
+        request.getRequestDispatcher("/view/user/player/signUp/signUp.jsp").forward(request, response);
     }
 
     @Override

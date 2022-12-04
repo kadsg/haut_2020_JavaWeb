@@ -28,7 +28,7 @@ public class EntryViewServlet extends HttpServlet {
         request.setAttribute("eventPlayerList", eventPlayerList);
         request.setAttribute("itemList", itemList);
 
-        request.getRequestDispatcher("/view/user/player/entry.jsp").forward(request, response);
+        request.getRequestDispatcher("/view/user/player/entry/entry.jsp").forward(request, response);
     }
 
     @Override

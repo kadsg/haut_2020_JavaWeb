@@ -44,7 +44,7 @@ public class VolunteerSignUpViewServlet extends HttpServlet {
         request.setAttribute("itemList", itemList);
         request.setAttribute("signUpList", signUpList);
 
-        request.getRequestDispatcher("/view/user/volunteer/signUp.jsp").forward(request, response);
+        request.getRequestDispatcher("/view/user/volunteer/signUp/signUp.jsp").forward(request, response);
     }
 
     @Override

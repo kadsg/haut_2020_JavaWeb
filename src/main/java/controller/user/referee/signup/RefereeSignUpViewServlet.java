@@ -43,7 +43,7 @@ public class RefereeSignUpViewServlet extends HttpServlet {
         request.setAttribute("itemList", itemList);
         request.setAttribute("signUpList", signUpList);
 
-        request.getRequestDispatcher("/view/user/referee/signUp.jsp").forward(request, response);
+        request.getRequestDispatcher("/view/user/referee/signUp/signUp.jsp").forward(request, response);
     }
 
     @Override

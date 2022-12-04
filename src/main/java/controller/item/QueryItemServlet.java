@@ -18,7 +18,7 @@ public class QueryItemServlet extends HttpServlet {
         request.setAttribute("itemList", itemList);
 
         String identity = request.getParameter("identity");
-        String path = "/view/user/" + identity + "/queryItem.jsp";
+        String path = "/view/user/" + identity + "/queryItem/queryItem.jsp";
         request.getRequestDispatcher(path).forward(request, response);
     }
 
