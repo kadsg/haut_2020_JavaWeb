@@ -34,7 +34,7 @@ public class MarkingIndexServlet extends HttpServlet {
 
         request.setAttribute("itemList", itemList);
 
-        request.getRequestDispatcher("view/user/referee/markingIndex.jsp").forward(request, response);
+        request.getRequestDispatcher("view/user/referee/marking/markingIndex.jsp").forward(request, response);
     }
 
     @Override

@@ -43,6 +43,27 @@ public class ItemService {
         return itemList;
     }
 
+    /**
+     * 获取已结束的项目
+     * @return
+     */
+    public List<Item> queryAllItemHasOver() throws IOException {
+        List<Item> itemList = null;
+        List<Item> tempList = queryAllItem();
+
+        if (tempList != null) {
+            for (Item item : tempList) {
+                if (item.isIs_over()) {
+                    if (itemList == null) {
+                        itemList = new ArrayList<>();
+                    }
+                    itemList.add(item);
+                }
+            }
+        }
+        return itemList;
+    }
+
     public Item queryItemById(String id_item) throws IOException {
         sqlSession = DBUtil.getSqlSession();
         ItemMapper mapper = sqlSession.getMapper(ItemMapper.class);
@@ -70,5 +91,13 @@ public class ItemService {
             }
         }
         return itemList;
+    }
+
+    public void update(Item item) throws IOException {
+        sqlSession = DBUtil.getSqlSession();
+        ItemMapper mapper = sqlSession.getMapper(ItemMapper.class);
+        mapper.update(item);
+        sqlSession.commit();
+        sqlSession.close();
     }
 }

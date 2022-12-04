@@ -1,11 +1,15 @@
 package service;
 
 import bean.EventPlayer;
+import bean.EventReferee;
 import bean.item.Item;
 import bean.user.Player;
+import bean.user.Referee;
 import bean.user.User;
 import mapper.EventPlayerMapper;
+import mapper.EventRefereeMapper;
 import mapper.user.PlayerMapper;
+import mapper.user.RefereeMapper;
 import org.apache.ibatis.session.SqlSession;
 import util.DBUtil;
 
@@ -85,5 +89,28 @@ public class EventPlayerService {
         sqlSession.commit();
         sqlSession.close();
         return eventPlayer;
+    }
+
+    /**
+     * 运动员报名参赛
+     * @param user 运动员
+     * @param id_item 参赛项目编号
+     */
+    public void signUp(User user, String id_item) throws IOException {
+        sqlSession = DBUtil.getSqlSession();
+        // 运动员参加赛事
+        EventPlayer eventPlayer = new EventPlayer(user.getAccount(), id_item, 0, false);
+        insert(eventPlayer);
+        // 为裁判员分配打分表
+        // 获取所有参与该赛事评判的裁判员
+        List<EventReferee> eventRefereeList = sqlSession.getMapper(EventRefereeMapper.class).queryAllByIdItem(id_item);
+        if (eventRefereeList != null) {
+            List<Referee> refereeList = new ArrayList<>();
+            for (EventReferee eventReferee : eventRefereeList) {
+                Referee referee = (Referee) sqlSession.getMapper(RefereeMapper.class).select(eventReferee.getId_referee());
+                refereeList.add(referee);
+            }
+            new MarkingService().insertToRefereeList(user.getAccount(), id_item, refereeList);
+        }
     }
 }

@@ -1,12 +1,14 @@
 package controller.user.administrator;
 
 import bean.item.Item;
+import service.ItemService;
 import service.user.administrator.AdministratorService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "AddItemServlet", value = "/AddItemServlet")
 public class AddItemServlet extends HttpServlet {
@@ -22,7 +24,11 @@ public class AddItemServlet extends HttpServlet {
 
         Item item = new Item(name, rule, place, time);
         service.addItem(item);
-        // TODO 假定添加成功，跳转到查看页面
+
+        List<Item> itemList = new ItemService().queryAllItem();
+        request.setAttribute("itemList", itemList);
+
+        request.getRequestDispatcher("/view/user/administrator/queryItem/queryItem.jsp").forward(request, response);
     }
 
     @Override
