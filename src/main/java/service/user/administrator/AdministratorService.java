@@ -1,4 +1,4 @@
-package service.user;
+package service.user.administrator;
 
 import bean.item.Item;
 import mapper.item.ItemMapper;
