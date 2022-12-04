@@ -13,12 +13,10 @@ import java.io.IOException;
 public class PlayerSignUpServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        EventPlayerService service = new EventPlayerService();
         String id = request.getParameter("id");
         User user = (User) request.getSession().getAttribute("user");
-        EventPlayer eventPlayer = new EventPlayer(user.getAccount(), id, 0, false);
 
-        service.insert(eventPlayer);
+        new EventPlayerService().signUp(user, id);
 
         request.getRequestDispatcher("/PlayerSignUpViewServlet").forward(request, response);
     }
