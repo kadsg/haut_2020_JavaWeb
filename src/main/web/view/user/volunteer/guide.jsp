@@ -16,6 +16,7 @@
         <a href="${pageContext.request.contextPath}/VolunteerSignUpViewServlet">加入赛事志愿组</a>
         <a href="${pageContext.request.contextPath}">志愿服务登记</a>
         <a href="${pageContext.request.contextPath}">我的志愿服务</a>
+        <a href="${pageContext.request.contextPath}/">登出</a>
     </div>
 </body>
 </html>

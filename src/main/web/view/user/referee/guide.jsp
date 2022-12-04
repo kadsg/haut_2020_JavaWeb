@@ -12,9 +12,10 @@
 </head>
 <body>
     <div id="guide">
-      <a href="${pageContext.request.contextPath}/QueryItemServlet?identity=referee">赛事查看</a>
-      <a href="${pageContext.request.contextPath}/RefereeSignUpViewServlet">加入赛事裁判组</a>
-      <a href="${pageContext.request.contextPath}/MarkingIndexServlet">赛事评判</a>
+        <a href="${pageContext.request.contextPath}/QueryItemServlet?identity=referee">赛事查看</a>
+        <a href="${pageContext.request.contextPath}/RefereeSignUpViewServlet">加入赛事裁判组</a>
+        <a href="${pageContext.request.contextPath}/MarkingIndexServlet">赛事评判</a>
+        <a href="${pageContext.request.contextPath}/">登出</a>
     </div>
 </body>
 </html>
