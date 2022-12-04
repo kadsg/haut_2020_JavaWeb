@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>运动会成绩公布</title>
+    <title></title>
 </head>
 <body>
     <jsp:include page="../guide.jsp"/>

@@ -1,7 +1,6 @@
 <%@ page import="bean.item.Item" %>
 <%@ page import="java.util.List" %>
 <%@ page import="bean.Score" %>
-<%@ page import="service.user.player.PlayerService" %>
 <%@ page import="bean.user.Player" %><%--
   Created by IntelliJ IDEA.
   User: kadsg
