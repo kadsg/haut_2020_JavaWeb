@@ -22,6 +22,27 @@ public class ItemService {
         return itemList;
     }
 
+    /**
+     * 获取正在进行的项目
+     * @return
+     */
+    public List<Item> queryAllItemOnGoing() throws IOException {
+        List<Item> itemList = null;
+        List<Item> tempList = queryAllItem();
+
+        if (tempList != null) {
+            for (Item item : tempList) {
+                if (!item.isIs_over()) {
+                    if (itemList == null) {
+                        itemList = new ArrayList<>();
+                    }
+                    itemList.add(item);
+                }
+            }
+        }
+        return itemList;
+    }
+
     public Item queryItemById(String id_item) throws IOException {
         sqlSession = DBUtil.getSqlSession();
         ItemMapper mapper = sqlSession.getMapper(ItemMapper.class);
