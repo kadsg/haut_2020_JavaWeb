@@ -15,7 +15,7 @@
     <title>赛事评判</title>
 </head>
 <body>
-    <jsp:include page="guide.jsp"/>
+    <jsp:include page="../guide.jsp"/>
     <div id="table">
         <p>加入赛事裁判组</p>
         <table>
@@ -30,6 +30,7 @@
             <%
                 if (itemList != null) {
                     for (Item item : itemList) {
+                        if (!item.isIs_over()) {
             %>
             <tr>
                 <td><%=item.getId()%>
@@ -44,6 +45,7 @@
                 <td><a href="/MarkingPageServlet?id=<%=item.getId()%>">进入</a></td>
             </tr>
             <%
+                        }
                     }
                 }
             %>

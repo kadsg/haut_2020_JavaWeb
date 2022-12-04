@@ -17,7 +17,7 @@
     <title>赛事志愿组</title>
 </head>
 <body>
-<jsp:include page="guide.jsp"/>
+<jsp:include page="../guide.jsp"/>
 <div id="table">
   <p>加入赛事裁判组</p>
   <table>

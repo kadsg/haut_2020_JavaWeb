@@ -1,6 +1,7 @@
 <%@ page import="bean.item.Item" %>
 <%@ page import="java.util.List" %>
-<%@ page import="bean.EventPlayer" %><%--
+<%@ page import="bean.EventPlayer" %>
+<%@ page import="bean.EventReferee" %><%--
   Created by IntelliJ IDEA.
   User: kadsg
   Date: 2022/12/2
@@ -10,16 +11,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     List<Item> itemList = (List<Item>) request.getAttribute("itemList");
-    List<EventPlayer> signUpList = (List<EventPlayer>) request.getAttribute("signUpList");
+    List<EventReferee> signUpList = (List<EventReferee>) request.getAttribute("signUpList");
 %>
 <html>
 <head>
-    <title>赛事报名</title>
+    <title>赛事裁判组</title>
 </head>
 <body>
-<jsp:include page="guide.jsp"/>
+<jsp:include page="../guide.jsp"/>
 <div id="table">
-    <p>赛事报名</p>
+    <p>加入赛事裁判组</p>
     <table>
         <tr>
             <th>项目编号</th>
@@ -48,17 +49,17 @@
                 boolean isSignUp = false;
                 // 报名表非空
                 if (signUpList != null)
-                    for (EventPlayer eventPlayer : signUpList)
-                        if (eventPlayer.getId_item().equals(item.getId()))
+                    for (EventReferee eventReferee : signUpList)
+                        if (eventReferee.getId_item().equals(item.getId()))
                             isSignUp = true;
 
                 if (isSignUp) {
             %>
-            <td>已报名</td>
+            <td>已加入</td>
             <%
                 } else {
             %>
-            <td><a href="/PlayerSignUpServlet?id=<%=item.getId()%>">点击报名</a></td>
+            <td><a href="/RefereeSignUpServlet?id=<%=item.getId()%>">点击加入</a></td>
             <%
                 }
                 }

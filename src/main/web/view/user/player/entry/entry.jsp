@@ -21,7 +21,7 @@
     <title>参加赛事</title>
 </head>
 <body>
-    <jsp:include page="guide.jsp"/>
+    <jsp:include page="../guide.jsp"/>
     <div id="table">
         <p>参加赛事</p>
         <table>

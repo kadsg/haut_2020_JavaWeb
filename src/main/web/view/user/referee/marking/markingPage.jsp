@@ -19,8 +19,8 @@
     <title><%=item.getName()%>判分表</title>
 </head>
 <body>
-    <jsp:include page="guide.jsp"/>
-    <form action="/MarkingServlet">
+    <jsp:include page="../guide.jsp"/>
+    <form action="${pageContext.request.contextPath}/MarkingServlet">
         <p><%=item.getName()%>判分表</p>
         <table>
             <tr>
