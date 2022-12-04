@@ -3,14 +3,13 @@ package controller.user.player.signup;
 import bean.EventPlayer;
 import bean.item.Item;
 import bean.user.User;
-import service.EventPlayerService;
 import service.ItemService;
+import service.user.player.PlayerService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,25 +19,30 @@ import java.util.List;
 public class PlayerSignUpViewServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // 获取可参赛表
-        ItemService itemService = new ItemService();
-        List<Item> itemList = null;
-        List<Item> tempList = itemService.queryAllItem();
         User user = (User) request.getSession().getAttribute("user");
+        // 获取可参赛表
+//        ItemService itemService = new ItemService();
+//        List<Item> itemList = null;
+//        List<Item> tempList = itemService.queryAllItem();
+//
+//        if (tempList != null) {
+//            for (Item item : tempList) {
+//                if (!item.isIs_over()) {
+//                    if (itemList == null) {
+//                        itemList = new ArrayList<>();
+//                    }
+//                    itemList.add(item);
+//                }
+//            }
+//        }
+        ItemService itemService = new ItemService();
+        List<Item> itemList = itemService.queryAllItemOnGoing();
 
-        if (tempList != null) {
-            for (Item item : tempList) {
-                if (!item.isIs_over()) {
-                    if (itemList == null) {
-                        itemList = new ArrayList<>();
-                    }
-                    itemList.add(item);
-                }
-            }
-        }
         // 获取运动员player的参赛表
-        EventPlayerService eventPlayerService = new EventPlayerService();
-        List<EventPlayer> signUpList = eventPlayerService.queryAllEventOfPlayer(user);
+//        EventPlayerService eventPlayerService = new EventPlayerService();
+//        List<EventPlayer> signUpList = eventPlayerService.queryAllEventOfPlayer(user);
+        PlayerService playerService = new PlayerService();
+        List<EventPlayer> signUpList = playerService.querySignUpList(user);
 
         request.setAttribute("itemList", itemList);
         request.setAttribute("signUpList", signUpList);
