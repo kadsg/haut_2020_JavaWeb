@@ -103,11 +103,12 @@ public class EventPlayerService {
         insert(eventPlayer);
         // 为裁判员分配打分表
         // 获取所有参与该赛事评判的裁判员
+        sqlSession = DBUtil.getSqlSession();
         List<EventReferee> eventRefereeList = sqlSession.getMapper(EventRefereeMapper.class).queryAllByIdItem(id_item);
         if (eventRefereeList != null) {
             List<Referee> refereeList = new ArrayList<>();
             for (EventReferee eventReferee : eventRefereeList) {
-                Referee referee = (Referee) sqlSession.getMapper(RefereeMapper.class).select(eventReferee.getId_referee());
+                Referee referee = sqlSession.getMapper(RefereeMapper.class).select(eventReferee.getId_referee());
                 refereeList.add(referee);
             }
             new MarkingService().insertToRefereeList(user.getAccount(), id_item, refereeList);
