@@ -58,7 +58,7 @@
             <%
                 } else {
             %>
-            <td><a href="/PlayerSignUpServlet?id=<%=item.getId()%>">点击报名</a></td>
+            <td><a href="${pageContext.request.contextPath}/PlayerSignUpServlet?id=<%=item.getId()%>">点击报名</a></td>
             <%
                 }
                 }
