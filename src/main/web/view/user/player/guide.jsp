@@ -15,7 +15,7 @@
         <a href="${pageContext.request.contextPath}/QueryItemServlet?identity=player">赛事查看</a>
         <a href="${pageContext.request.contextPath}/PlayerSignUpViewServlet">赛事报名</a>
         <a href="${pageContext.request.contextPath}/EntryViewServlet">参加赛事</a>
-        <a href="">查看成绩</a>
+        <a href="${pageContext.request.contextPath}/DisplayScoreIndexServlet?identity=player">查看项目成绩</a>
         <a href="${pageContext.request.contextPath}/">登出</a>
     </div>
 </body>

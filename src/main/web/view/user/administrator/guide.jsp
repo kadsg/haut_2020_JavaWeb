@@ -12,9 +12,10 @@
 </head>
 <body>
     <div id="guide">
-        <a href="addItem.jsp">发布运动会项目</a>
+        <a href="${pageContext.request.contextPath}/view/user/administrator/addItem/addItem.jsp">发布运动会项目</a>
         <a href="${pageContext.request.contextPath}/QueryItemServlet?identity=administrator">赛事查看</a>
-        <a href="">运动项目成绩公布</a>
+        <a href="${pageContext.request.contextPath}/AnnounceViewServlet">运动项目成绩公布</a>
+        <a href="${pageContext.request.contextPath}/DisplayScoreIndexServlet?identity=administrator">查看项目成绩</a>
         <a href="${pageContext.request.contextPath}/">登出</a>
     </div>
 </body>
