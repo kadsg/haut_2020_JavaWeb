@@ -1,5 +1,6 @@
 package mapper.user;
 
+import bean.user.Referee;
 import bean.user.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
@@ -9,5 +10,5 @@ public interface RefereeMapper {
     void insert(User user);
 
     @Select("select * from referee where account=#{0}")
-    User select(String account);
+    Referee select(String account);
 }
