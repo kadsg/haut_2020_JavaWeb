@@ -1,7 +1,7 @@
 package controller.user.administrator;
 
 import bean.item.Item;
-import service.user.AdministratorService;
+import service.user.administrator.AdministratorService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -27,6 +27,6 @@ public class AddItemServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+        doGet(request, response);
     }
 }

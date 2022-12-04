@@ -23,7 +23,7 @@ public class EventRefereeService {
     /**
      * 获取裁判的所有报名记录
      */
-    public List<EventReferee> getAllEventReferee(User user) throws IOException {
+    public List<EventReferee> getAllEventOfReferee(User user) throws IOException {
         sqlSession = DBUtil.getSqlSession();
         EventRefereeMapper mapper = sqlSession.getMapper(EventRefereeMapper.class);
         List<EventReferee> eventRefereeList = mapper.queryAllByIdReferee(user.getAccount());
