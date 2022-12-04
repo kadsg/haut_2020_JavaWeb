@@ -3,6 +3,7 @@ package controller.user.referee.marking;
 import bean.Marking;
 import bean.item.Item;
 import bean.user.Player;
+import bean.user.User;
 import service.EventPlayerService;
 import service.ItemService;
 import service.MarkingService;
@@ -18,6 +19,8 @@ import java.util.List;
 public class MarkingServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 裁判员
+        User user = (User) request.getSession().getAttribute("user");
         // 获得打分表
         // 获取该项目下的运动员列表
         String id_item = request.getParameter("id");
@@ -30,7 +33,7 @@ public class MarkingServlet extends HttpServlet {
             if (markingList == null)
                 markingList = new ArrayList<>();
             for (Player player : playerList) {
-                Marking marking = markingService.search(id_item, player.getAccount());
+                Marking marking = markingService.search(id_item, player.getAccount(), user.getAccount());
                 markingList.add(marking);
             }
         }
@@ -44,7 +47,7 @@ public class MarkingServlet extends HttpServlet {
         request.setAttribute("item", item);
         request.setAttribute("playerList", playerList);
         request.setAttribute("markingList", markingList);
-        request.getRequestDispatcher("/view/user/referee/markingPage.jsp").forward(request, response);
+        request.getRequestDispatcher("/view/user/referee/marking/markingPage.jsp").forward(request, response);
     }
 
     @Override
