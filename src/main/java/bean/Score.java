@@ -53,6 +53,6 @@ public class Score implements Comparable<Score> {
 
     @Override
     public int compareTo(Score o) {
-        return (int) (o.getScore() - this.score);
+        return Double.compare(o.getScore(), this.getScore());
     }
 }

@@ -30,10 +30,15 @@ public class EventService {
             for (Player player : playerList) {
                 List<Marking> markingList = new MarkingService().queryByIdItemAndIdPlayer(id_item, player.getAccount());
                 // 统计
-                int count = markingList.size();
+                int count = 0;
                 double sum = 0 , grade;
-                for (Marking marking : markingList)
-                    sum += marking.getGrade();
+                for (Marking marking : markingList) {
+                    double temp = marking.getGrade();
+                    if (temp != 0) {
+                        sum += temp;
+                        ++count;
+                    }
+                }
                 // 得分
                 grade = sum / count;
                 Score score = new Score(id_item, player.getAccount(), grade);
