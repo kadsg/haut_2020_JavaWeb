@@ -1,0 +1,25 @@
+/* 导航链接 */
+.guide a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+}
+
+/* 链接 - 修改颜色 */
+.guide a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* 导航条 */
+.guide {
+    overflow: hidden;
+    width: 80%;
+    display: flex;
+    margin: auto;
+}
+
