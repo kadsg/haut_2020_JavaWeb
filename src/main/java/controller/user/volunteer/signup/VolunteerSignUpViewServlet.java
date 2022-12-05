@@ -5,7 +5,7 @@ import bean.item.Item;
 import bean.user.User;
 
 import service.ItemService;
-import service.user.VolunteerService;
+import service.user.volunteer.VolunteerService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
