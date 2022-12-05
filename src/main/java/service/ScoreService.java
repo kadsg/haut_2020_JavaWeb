@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import util.DBUtil;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 public class ScoreService {
@@ -31,6 +32,8 @@ public class ScoreService {
         List<Score> scoreList = mapper.queryAllByIdItem(id_item);
         sqlSession.commit();
         sqlSession.close();
+        // 排序
+        Collections.sort(scoreList);
         return scoreList;
     }
 }
