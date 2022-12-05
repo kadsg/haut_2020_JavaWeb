@@ -39,7 +39,7 @@
       </td>
       <td><%=item.getName()%>
       </td>
-      <td>TEST</td>
+      <td><a href="${pageContext.request.contextPath}/view/item/displayRule.jsp?rule=<%=item.getRule()%>" target="_blank">查看</a></td></td>
       <td><%=item.getTime()%>
       </td>
       <td><%=item.getPlace()%>
@@ -60,6 +60,7 @@
                 } else {
             %>
       <td><a href="${pageContext.request.contextPath}/VolunteerSignUpServlet?id=<%=item.getId()%>">点击加入</a></td>
+    </tr>
         <%
                 }
                 }

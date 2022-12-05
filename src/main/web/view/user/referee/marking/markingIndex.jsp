@@ -23,7 +23,7 @@
             <tr>
                 <th>项目编号</th>
                 <th>名称</th>
-                <th>规则（点击查看）</th>
+                <th>规则</th>
                 <th>比赛时间</th>
                 <th>比赛地点</th>
                 <th>动作</th>
@@ -38,7 +38,7 @@
                 </td>
                 <td><%=item.getName()%>
                 </td>
-                <td>TEST</td>
+                <td><a href="${pageContext.request.contextPath}/view/item/displayRule.jsp?rule=<%=item.getRule()%>" target="_blank">查看</a></td></td>
                 <td><%=item.getTime()%>
                 </td>
                 <td><%=item.getPlace()%>
