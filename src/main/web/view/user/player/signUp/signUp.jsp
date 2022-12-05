@@ -16,9 +16,10 @@
 <head>
     <title>赛事报名</title>
 </head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/table.css">
 <body>
-<jsp:include page="../guide.jsp"/>
-<div id="table">
+<jsp:include page="../index.jsp"/>
+<div>
     <p>赛事报名</p>
     <table>
         <tr>

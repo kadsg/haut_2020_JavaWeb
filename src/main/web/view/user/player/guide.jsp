@@ -10,8 +10,10 @@
 <head>
     <title>运动员导航条</title>
 </head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/div.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/guide.css">
 <body>
-    <div id="guide">
+    <div class="guide">
         <a href="${pageContext.request.contextPath}/QueryItemServlet?identity=player">赛事查看</a>
         <a href="${pageContext.request.contextPath}/PlayerSignUpViewServlet">赛事报名</a>
         <a href="${pageContext.request.contextPath}/EntryViewServlet">参加赛事</a>

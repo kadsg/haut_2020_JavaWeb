@@ -13,6 +13,7 @@
 <head>
     <title>赛事成绩</title>
 </head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/table.css">
 <%
     Item item = (Item) request.getAttribute("item");
     List<Score> scoreList = (List<Score>) request.getAttribute("scoreList");
@@ -21,8 +22,8 @@
 %>
 <body>
     <div>
-        <p><%=item.getName()%>赛事成绩</p>
-        <table id="table">
+        <h3><%=item.getName()%>赛事成绩</h3>
+        <table>
             <tr>
                 <th>选手编号</th>
                 <th>选手姓名</th>

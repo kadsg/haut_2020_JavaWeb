@@ -20,9 +20,10 @@
 <head>
     <title>参加赛事</title>
 </head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/table.css">
 <body>
-    <jsp:include page="../guide.jsp"/>
-    <div id="table">
+    <jsp:include page="../index.jsp"/>
+    <div>
         <p>参加赛事</p>
         <table>
             <tr>

@@ -14,7 +14,7 @@
     <title>赛事查看</title>
 </head>
 <body>
-    <jsp:include page="../guide.jsp"/>
+    <jsp:include page="../index.jsp"/>
     <jsp:include page="/view/item/queryItem.jsp"/>
 </body>
 </html>

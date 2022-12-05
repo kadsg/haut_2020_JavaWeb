@@ -14,10 +14,11 @@
 <head>
     <title>赛事评判</title>
 </head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/table.css">
 <body>
-    <jsp:include page="../guide.jsp"/>
-    <div id="table">
-        <p>加入赛事裁判组</p>
+    <jsp:include page="../index.jsp"/>
+    <div>
+        <h3>加入赛事裁判组</h3>
         <table>
             <tr>
                 <th>项目编号</th>

@@ -11,7 +11,9 @@
 <head>
     <title>管理员界面</title>
 </head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/header.css">
 <body>
+    <div class="header"><h3>欢迎使用河南工业大学运动会管理系统</h3></div>
     <jsp:include page="guide.jsp"/>
 </body>
 </html>

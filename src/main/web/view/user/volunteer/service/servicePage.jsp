@@ -16,8 +16,9 @@
 <head>
     <title><%=item.getName()%>志愿者服务</title>
 </head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/table.css">
 <body>
-    <jsp:include page="../guide.jsp"/>
+    <jsp:include page="../index.jsp"/>
     <div>
       <table>
         <tr>

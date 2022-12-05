@@ -10,8 +10,10 @@
 <head>
     <title>志愿者导航条</title>
 </head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/div.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/guide.css">
 <body>
-    <div id="guide">
+    <div class="guide">
         <a href="${pageContext.request.contextPath}/QueryItemServlet?identity=volunteer">赛事查看</a>
         <a href="${pageContext.request.contextPath}/VolunteerSignUpViewServlet">加入赛事志愿组</a>
         <a href="${pageContext.request.contextPath}/ServiceIndexServlet">志愿服务登记</a>

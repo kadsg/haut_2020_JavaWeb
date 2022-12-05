@@ -18,10 +18,11 @@
 <head>
     <title>志愿服务记录</title>
 </head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/table.css">
 <body>
-    <jsp:include page="../guide.jsp"/>
+    <jsp:include page="../index.jsp"/>
     <div>
-        <table id="table">
+        <table>
             <tr>
                 <th>赛事编号</th>
                 <th>赛事名称</th>

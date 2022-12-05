@@ -20,8 +20,9 @@
 <head>
     <title>赛事成绩</title>
 </head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/table.css">
 <body>
-    <jsp:include page="../guide.jsp"/>
+    <jsp:include page="../index.jsp"/>
     <div>
         <p><%=item.getName()%>赛事成绩</p>
         <table id="table">

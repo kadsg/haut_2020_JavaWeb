@@ -28,7 +28,7 @@
             <input type="radio" name="identity" id="player" value="player">
             <label for="player">运动员</label>
             <input type="radio" name="identity" id="volunteer" value="volunteer">
-            <label for="volunteer">志愿者</label>
+            <label for="volunteer">志愿者</label> <br><br>
             <input type="submit" value="注册">
         </form>
     </div>

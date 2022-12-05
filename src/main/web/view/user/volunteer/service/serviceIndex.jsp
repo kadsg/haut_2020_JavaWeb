@@ -14,8 +14,9 @@
 <head>
     <title>志愿服务登记</title>
 </head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/table.css">
 <body>
-    <jsp:include page="../guide.jsp"/>
+    <jsp:include page="../index.jsp"/>
     <div>
         <p>志愿服务登记</p>
         <table>

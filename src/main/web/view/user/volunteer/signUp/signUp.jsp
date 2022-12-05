@@ -16,15 +16,16 @@
 <head>
     <title>赛事志愿组</title>
 </head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/table.css">
 <body>
-<jsp:include page="../guide.jsp"/>
-<div id="table">
+<jsp:include page="../index.jsp"/>
+<div>
   <p>加入赛事裁判组</p>
   <table>
     <tr>
       <th>项目编号</th>
       <th>名称</th>
-      <th>规则（点击查看）</th>
+      <th>规则</th>
       <th>比赛时间</th>
       <th>比赛地点</th>
       <th>动作</th>

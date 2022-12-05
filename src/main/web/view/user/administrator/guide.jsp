@@ -10,8 +10,10 @@
 <head>
     <title>导航条</title>
 </head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/div.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/guide.css">
 <body>
-    <div id="guide">
+    <div class="guide">
         <a href="${pageContext.request.contextPath}/view/user/administrator/addItem/addItem.jsp">发布运动会项目</a>
         <a href="${pageContext.request.contextPath}/QueryItemServlet?identity=administrator">赛事查看</a>
         <a href="${pageContext.request.contextPath}/AnnounceViewServlet">运动项目成绩公布</a>

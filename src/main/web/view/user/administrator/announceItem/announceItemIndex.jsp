@@ -15,15 +15,16 @@
 <head>
     <title>运动项目成绩公布</title>
 </head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/table.css">
 <body>
-<div id="table">
-    <jsp:include page="../guide.jsp"/>
-    <p>成绩公布</p>
+    <jsp:include page="../index.jsp"/>
+<div>
+    <h3>成绩公布</h3>
     <table>
         <tr>
             <th>项目编号</th>
             <th>名称</th>
-            <th>规则（点击查看）</th>
+            <th>规则</th>
             <th>比赛时间</th>
             <th>比赛地点</th>
             <th>状态</th>

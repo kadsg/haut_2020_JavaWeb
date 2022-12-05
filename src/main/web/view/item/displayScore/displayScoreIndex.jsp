@@ -16,13 +16,13 @@
     <title>赛事成绩查看</title>
 </head>
 <body>
-<div id="table">
-    <p>当前赛事</p>
+<div>
+    <h3>当前赛事</h3>
     <table>
         <tr>
             <th>项目编号</th>
             <th>名称</th>
-            <th>规则（点击查看）</th>
+            <th>规则</th>
             <th>比赛时间</th>
             <th>比赛地点</th>
             <th>动作</th>

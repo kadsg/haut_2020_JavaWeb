@@ -10,8 +10,10 @@
 <head>
     <title>裁判员导航条</title>
 </head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/div.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/guide.css">
 <body>
-    <div id="guide">
+    <div class="guide">
         <a href="${pageContext.request.contextPath}/QueryItemServlet?identity=referee">赛事查看</a>
         <a href="${pageContext.request.contextPath}/RefereeSignUpViewServlet">加入赛事裁判组</a>
         <a href="${pageContext.request.contextPath}/MarkingIndexServlet">赛事评判</a>

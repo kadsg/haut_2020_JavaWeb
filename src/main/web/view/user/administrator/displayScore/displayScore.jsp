@@ -11,7 +11,7 @@
     <title></title>
 </head>
 <body>
-    <jsp:include page="../guide.jsp"/>
+    <jsp:include page="../index.jsp"/>
     <jsp:include page="/view/item/displayScore/displayScore.jsp"/>
 </body>
 </html>

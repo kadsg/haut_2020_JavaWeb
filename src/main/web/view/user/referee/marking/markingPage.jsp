@@ -18,10 +18,12 @@
 <head>
     <title><%=item.getName()%>判分表</title>
 </head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/image/css/table.css">
 <body>
-    <jsp:include page="../guide.jsp"/>
-    <form action="${pageContext.request.contextPath}/MarkingServlet">
-        <p><%=item.getName()%>判分表</p>
+    <jsp:include page="../index.jsp"/>
+    <div>
+        <form action="${pageContext.request.contextPath}/MarkingServlet">
+        <h3><%=item.getName()%>判分表</h3>
         <table>
             <tr>
                 <th>运动员编号</th>
@@ -45,11 +47,12 @@
             if (markingList != null) {
         %>
         <%--项目编号--%>
-        <input type="hidden" name="id" value="<%=item.getId()%>">
+        <input type="hidden" name="id" value="<%=item.getId()%>"> <br>
         <input type="submit" value="提交">
         <%
             }
         %>
     </form>
+    </div>
 </body>
 </html>
