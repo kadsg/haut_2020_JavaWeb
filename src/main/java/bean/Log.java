@@ -1,16 +1,26 @@
 package bean;
 
 public class Log {
+    private String id_volunteer;
     private String id_item;
     private String id_player;
     private String message;
     private String time;
 
-    public Log(String id_item, String id_player, String message, String time) {
+    public Log(String id_volunteer, String id_item, String id_player, String message, String time) {
+        this.id_volunteer = id_volunteer;
         this.id_item = id_item;
         this.id_player = id_player;
         this.message = message;
         this.time = time;
+    }
+
+    public String getId_volunteer() {
+        return id_volunteer;
+    }
+
+    public void setId_volunteer(String id_volunteer) {
+        this.id_volunteer = id_volunteer;
     }
 
     public String getId_item() {
