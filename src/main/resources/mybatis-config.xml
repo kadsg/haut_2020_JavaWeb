@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--导入写好的数据源配置-->
+    <properties resource="db.properties"/>
+
+    <!--    设置日志-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <!-- 配置mybatis运行环境 -->
+    <environments default="development">
+        <environment id="development">
+            <!-- 使用JDBC的事务管理 -->
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <!-- MySQL数据库驱动 -->
+                <property name="driver" value="${driver}" />
+                <!-- 连接数据库的URL -->
+                <property name="url"
+                          value="${url}" />
+                <property name="username" value="${username}" />
+                <property name="password" value="${password}" />
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 将mapper文件加入到配置文件中 -->
+    <mappers>
+        <mapper class="mapper.user.AdministratorMapper"/>
+        <mapper class="mapper.user.RefereeMapper"/>
+        <mapper class="mapper.user.PlayerMapper"/>
+        <mapper class="mapper.user.VolunteerMapper"/>
+        <mapper class="mapper.item.ItemMapper"/>
+        <mapper class="mapper.EventPlayerMapper"/>
+        <mapper class="mapper.EventRefereeMapper"/>
+        <mapper class="mapper.MarkingMapper"/>
+        <mapper class="mapper.EventVolunteerMapper"/>
+        <mapper class="mapper.LogMapper"/>
+        <mapper class="mapper.ScoreMapper"/>
+    </mappers>
+</configuration>
